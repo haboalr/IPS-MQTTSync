@@ -39,6 +39,15 @@
                     "edit": {
                         "type": "ValidationTextBox"
                     }
+                },
+                {
+                    "caption": "Building",
+                    "name": "Building",
+                    "width": "200px",
+                    "add": "",
+                    "edit": {
+                        "type": "ValidationTextBox"
+                    }
                 }
             ],
             "values": []
