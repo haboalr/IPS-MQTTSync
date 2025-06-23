@@ -34,6 +34,11 @@
                     "width": "400px"
                 },
                 {
+                    "caption": "Building",
+                    "name": "Building",
+                    "width": "200px"
+                },
+                {
                     "caption": "Object Type",
                     "name": "ObjectType",
                     "width": "auto"

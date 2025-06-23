@@ -29,6 +29,7 @@ class MQTTSyncClientConfigurator extends IPSModule
                 'ObjectID'      => $Device->ObjectID,
                 'ObjectName'    => $Device->ObjectName,
                 'MQTTTopic'     => $Device->MQTTTopic,
+                'Building'      => property_exists($Device, 'Building') ? $Device->Building : '',
                 'ObjectType'    => $Device->ObjectType,
                 'name'          => $Device->ObjectName . ' (' . $Device->MQTTTopic . ')',
                 'instanceID'    => $instanceID

@@ -81,6 +81,7 @@ class MQTTSyncServer extends IPSModule
                                 $Instanz[$i]['ID'] = $tmpObject['ObjectID'];
                                 $Instanz[$i]['Name'] = $tmpObject['ObjectName'];
                                 $Instanz[$i]['ObjectIdent'] = $tmpObject['ObjectIdent'];
+                                $Instanz[$i]['Building'] = property_exists($Device, 'Building') ? $Device->Building : '';
                                 $Instanz[$i]['VariableTyp'] = IPS_GetVariable($tmpObject['ObjectID'])['VariableType'];
                                 $Instanz[$i]['VariableAction'] = IPS_GetVariable($tmpObject['ObjectID'])['VariableAction'];
                                 $Instanz[$i]['VariableCustomAction'] = IPS_GetVariable($tmpObject['ObjectID'])['VariableAction'];
@@ -95,6 +96,7 @@ class MQTTSyncServer extends IPSModule
                         $Instanz[0]['ID'] = $Object['ObjectID'];
                         $Instanz[0]['Name'] = $Object['ObjectName'];
                         $Instanz[0]['ObjectIdent'] = $Object['ObjectIdent'];
+                        $Instanz[0]['Building'] = property_exists($Device, 'Building') ? $Device->Building : '';
                         $Instanz[0]['VariableTyp'] = IPS_GetVariable($Object['ObjectID'])['VariableType'];
                         $Instanz[0]['VariableAction'] = IPS_GetVariable($Object['ObjectID'])['VariableAction'];
                         $Instanz[0]['VariableCustomAction'] = IPS_GetVariable($Object['ObjectID'])['VariableCustomAction'];
@@ -224,6 +226,11 @@ class MQTTSyncServer extends IPSModule
             $tmpConfiguration['ObjectID'] = $Device->ObjectID;
             $tmpConfiguration['ObjectName'] = IPS_GetObject($Device->ObjectID)['ObjectName'];
             $tmpConfiguration['MQTTTopic'] = $Device->MQTTTopic;
+            if (property_exists($Device, 'Building')) {
+                $tmpConfiguration['Building'] = $Device->Building;
+            } else {
+                $tmpConfiguration['Building'] = '';
+            }
             $tmpConfiguration['ObjectType'] = IPS_GetObject($Device->ObjectID)['ObjectType'];
             array_push($Configuration, $tmpConfiguration);
         }
@@ -312,6 +319,7 @@ class MQTTSyncServer extends IPSModule
                         $Instanz[$i]['ID'] = $tmpObject['ObjectID'];
                         $Instanz[$i]['Name'] = $tmpObject['ObjectName'];
                         $Instanz[$i]['ObjectIdent'] = $tmpObject['ObjectIdent'];
+                        $Instanz[$i]['Building'] = property_exists($Device, 'Building') ? $Device->Building : '';
                         $Instanz[$i]['VariableTyp'] = IPS_GetVariable($tmpObject['ObjectID'])['VariableType'];
                         $Instanz[$i]['VariableAction'] = IPS_GetVariable($tmpObject['ObjectID'])['VariableAction'];
                         $Instanz[$i]['VariableCustomAction'] = IPS_GetVariable($tmpObject['ObjectID'])['VariableAction'];
@@ -326,6 +334,7 @@ class MQTTSyncServer extends IPSModule
                 $Instanz[0]['ID'] = $Object['ObjectID'];
                 $Instanz[0]['Name'] = $Object['ObjectName'];
                 $Instanz[0]['ObjectIdent'] = $Object['ObjectIdent'];
+                $Instanz[0]['Building'] = property_exists($Device, 'Building') ? $Device->Building : '';
                 $Instanz[0]['VariableTyp'] = IPS_GetVariable($Object['ObjectID'])['VariableType'];
                 $Instanz[0]['VariableAction'] = IPS_GetVariable($Object['ObjectID'])['VariableAction'];
                 $Instanz[0]['VariableCustomAction'] = IPS_GetVariable($Object['ObjectID'])['VariableCustomAction'];

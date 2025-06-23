@@ -15,7 +15,7 @@
 
 * Das MQTT Topic gibt an, unter welchem Group Topic die zu synchronisierenden Daten versendet werden.
 * In der Liste können die Objekte angegeben werden, welche mit dem Slave System synchronisiert werden sollen.
-    * Es wird die ObjektID und das MQTT Topic hinterlegt.
+* Es wird die ObjektID, das MQTT Topic und optional ein Building hinterlegt.
     * Als Objekt können Variablen oder komplette Instanzen hinterlegt werden
 
 ## 3. Spenden
